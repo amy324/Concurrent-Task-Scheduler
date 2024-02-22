@@ -13,13 +13,9 @@ type Task struct {
 }
 
 
-// SampleTaskFunction is a sample task function.
-func SampleTaskFunction() error {
-    // Print a message indicating task execution
-    fmt.Println("Executing sample task...")
-    
-    // TODO: Simulate some work here
-    
-    // Return nil to indicate successful execution
-    return nil
+
+// Execute executes the task function.
+func (t *Task) Execute() {
+    fmt.Printf("Executing task: %s\n", t.Name)
+    t.Function() // Execute the task function
 }
