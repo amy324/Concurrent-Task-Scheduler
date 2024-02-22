@@ -67,5 +67,6 @@ func main() {
 	scheduler.AddTask(&task2)
 
 	// Execute the tasks concurrently
-	scheduler.ExecuteTasks()
+	scheduler.executeTasks(scheduler.tasks)
+
 }
