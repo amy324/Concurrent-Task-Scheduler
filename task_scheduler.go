@@ -3,7 +3,6 @@
 package main
 
 import (
-	
 	"os"
 	"sync"
 	"time"
@@ -123,7 +122,8 @@ func (ts *TaskScheduler) executeTasks(tasks []*Task) {
 		wg.Add(1)
 		go func(t *Task) {
 			defer wg.Done()
-			t.Execute() // Execute the task
+			logger.Debugf("Executing task: %s", t.Name)
+			t.Execute() // Simply call t.Execute() without attempting to use its result
 		}(task)
 	}
 	wg.Wait()
